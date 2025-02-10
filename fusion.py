@@ -208,12 +208,11 @@ class OptimizedEfficientNet(nn.Module):
         self.edge_branch = LightEdgeExtractor()
 
         # 融合模块
+        self.fusion = None
         if Config.FUSION_TYPE == 'attention':
             self.fusion = RobustFusion()
         elif Config.FUSION_TYPE == 'add':
             self.fusion = lambda x, y: x + y
-        else:
-            self.fusion = None
 
         # 增强的分类头
         self.classifier = nn.Sequential(
@@ -229,17 +228,13 @@ class OptimizedEfficientNet(nn.Module):
 
     def _freeze_backbone(self):
         children = list(self.base.features.children())
-
-        # 动态冻结比例
+        freeze_idx = 0
         if Config.current_stage == 'pretrain':
             freeze_idx = int(len(children) * 0.9)  # 冻结前90%
         elif Config.current_stage == 'finetune':
             freeze_idx = int(len(children) * 0.5)  # 冻结前50%
 
-        # 打印冻结信息（调试用）
-        print(f"\n当前阶段: {Config.current_stage}")
-        print(f"冻结层数: {freeze_idx}/{len(children)}")
-
+        # 冻结或解冻层
         for idx, layer in enumerate(children):
             if idx < freeze_idx:
                 for param in layer.parameters():
@@ -248,14 +243,26 @@ class OptimizedEfficientNet(nn.Module):
                 for param in layer.parameters():
                     param.requires_grad = True
 
-
+        # 日志输出逻辑
         total_params = sum(p.numel() for p in self.base.parameters())
         trainable_params = sum(p.numel() for p in self.base.parameters() if p.requires_grad)
-        print(f"可训练参数比例: {trainable_params / total_params:.1%}")
+
+        # 初始化时打印日志
+        if not hasattr(self, 'last_stage'):
+            self.last_stage = Config.current_stage
+            print(f"\n初始化阶段: {Config.current_stage}")
+            print(f"冻结层数: {freeze_idx}/{len(children)}")
+            print(f"可训练参数比例: {trainable_params / total_params:.1%}")
+        # 阶段切换时打印日志
+        elif self.last_stage != Config.current_stage:
+            self.last_stage = Config.current_stage
+            print(f"\n切换到 {Config.current_stage} 阶段")
+            print(f"新冻结层数: {freeze_idx}/{len(children)}")
+            print(f"可训练参数比例: {trainable_params / total_params:.1%}")
 
     def forward(self, rgb, edge=None):
-        assert edge is None or isinstance(edge, torch.Tensor), \
-            "Edge must be Tensor or None"
+        assert edge is None or isinstance(edge, torch.Tensor), "Edge must be Tensor or None"
+
         # RGB特征提取
         rgb_feat = self.base.features(rgb)
 
@@ -378,20 +385,28 @@ class AdvancedTrainer:
         stage_changed = False  # 标记阶段是否已切换
         best_stage_acc = 0  # 记录当前阶段最佳准确率
         no_improve_epochs = 0  # 未提升计数器
+
         for epoch in range(Config.NUM_EPOCHS):
 
             self.current_epoch = epoch + 1
+            # 动态调整学习率
+            if Config.current_stage == 'finetune' and not stage_changed:
+                new_lr = Config.LEARNING_RATE * 0.1  # finetune阶段使用更小学习率
+                for param_group in self.optimizer.param_groups:
+                    param_group['lr'] = new_lr
+
             # --- 阶段切换逻辑 ---
             self.model._freeze_backbone()  # 强制更新冻结状态
             if stage_changed:
                 # 重新初始化优化器以包含新解冻的参数
                 self.optimizer = optim.AdamW(
                     filter(lambda p: p.requires_grad, self.model.parameters()),
-                    lr=Config.LEARNING_RATE,
+                    lr=Config.LEARNING_RATE * 0.1 if Config.current_stage == 'finetune' else Config.LEARNING_RATE,
                     weight_decay=Config.WEIGHT_DECAY
                 )
                 stage_changed = False
                 print(f"\n切换到 {Config.current_stage} 阶段，重置优化器")
+
             # --- 训练与验证 ---
             train_loss = self.train_epoch()
             val_loss, val_acc = self.validate()
@@ -518,7 +533,6 @@ if __name__ == "__main__":
                              std=[0.229, 0.224, 0.225]),
         transforms.RandomErasing(p=0.5, scale=(0.02, 0.2))
     ])
-
     val_transform = transforms.Compose([
         transforms.Resize((Config.IMG_SIZE, Config.IMG_SIZE)),
         transforms.ToTensor(),
@@ -559,6 +573,29 @@ if __name__ == "__main__":
     # 开始训练
     trainer = AdvancedTrainer(model, train_loader, val_loader)
     trainer.run()
+
+"""
+
+    
+    
+        # 数据增强配置
+    train_transform = transforms.Compose([
+        transforms.Resize((Config.IMG_SIZE + 64, Config.IMG_SIZE + 64)),
+        transforms.RandomCrop(Config.IMG_SIZE),
+        transforms.RandomHorizontalFlip(p=0.5),
+        transforms.RandomVerticalFlip(p=0.3),
+        transforms.RandomApply([
+            transforms.RandomResizedCrop(Config.IMG_SIZE,
+                                        scale=(0.8, 1.0),
+                                        ratio=(0.8, 1.2))  # 增强少数类多样性
+        ], p=0.5 if Config.current_stage == 'pretrain' else 0.8),
+        transforms.RandomAffine(degrees=15, translate=(0.1, 0.1)),
+        transforms.ColorJitter(brightness=0.3, contrast=0.3),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406],
+                             std=[0.229, 0.224, 0.225]),
+        transforms.RandomErasing(p=0.7, scale=(0.05, 0.3))  # 更强遮挡
+"""
 
 
 '''
