@@ -33,7 +33,7 @@ class Config:
     # 训练参数
     LEARNING_RATE = 1e-5  # 降低学习率
     WEIGHT_DECAY = 3e-4  # 增大权重衰减
-    PATIENCE = 10  # 放宽早停条件
+    PATIENCE = 100  # 放宽早停条件
     ALPHA = 0.8
     GAMMA = 1.5
 
@@ -391,7 +391,7 @@ class AdvancedTrainer:
             self.current_epoch = epoch + 1
             # 动态调整学习率
             if Config.current_stage == 'finetune' and not stage_changed:
-                new_lr = Config.LEARNING_RATE * 0.1  # finetune阶段使用更小学习率
+                new_lr = Config.LEARNING_RATE * 0.5  # finetune阶段使用更小学习率
                 for param_group in self.optimizer.param_groups:
                     param_group['lr'] = new_lr
 

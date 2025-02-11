@@ -1,0 +1,573 @@
+F:\Anaconda3\envs\pytorchenv\python.exe F:\PythonProjects\Steel\fusion.py 
+
+初始化阶段: pretrain
+冻结层数: 8/9
+可训练参数比例: 32.0%
+Epoch 1/100
+Train Loss: 0.1339 | Train Acc: 70.77%
+Val Loss: 0.1185 | Val Acc: 75.47%
+Best Val Acc: 75.47%
+
+Epoch 2/100
+Train Loss: 0.0849 | Train Acc: 87.70%
+Val Loss: 0.0696 | Val Acc: 88.68%
+Best Val Acc: 88.68%
+
+Epoch 3/100
+Train Loss: 0.0948 | Train Acc: 85.79%
+Val Loss: 0.0938 | Val Acc: 88.68%
+Best Val Acc: 88.68%
+
+Epoch 4/100
+Train Loss: 0.0906 | Train Acc: 89.07%
+Val Loss: 0.0784 | Val Acc: 88.68%
+Best Val Acc: 88.68%
+
+Epoch 5/100
+Train Loss: 0.1072 | Train Acc: 87.98%
+Val Loss: 0.1235 | Val Acc: 84.91%
+Best Val Acc: 88.68%
+
+Epoch 6/100
+Train Loss: 0.1134 | Train Acc: 88.25%
+Val Loss: 0.0542 | Val Acc: 90.57%
+Best Val Acc: 90.57%
+
+Epoch 7/100
+Train Loss: 0.0920 | Train Acc: 89.34%
+Val Loss: 0.0716 | Val Acc: 88.68%
+Best Val Acc: 90.57%
+
+Epoch 8/100
+Train Loss: 0.0584 | Train Acc: 93.99%
+Val Loss: 0.0747 | Val Acc: 90.57%
+Best Val Acc: 90.57%
+
+Epoch 9/100
+Train Loss: 0.0724 | Train Acc: 90.16%
+Val Loss: 0.0428 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+Epoch 10/100
+Train Loss: 0.0893 | Train Acc: 90.44%
+Val Loss: 0.0691 | Val Acc: 90.57%
+Best Val Acc: 94.34%
+
+
+性能分析:
+混淆矩阵:
+[[42  5]
+ [ 1  5]]
+少数类召回率: 83.33%
+Epoch 11/100
+Train Loss: 0.0796 | Train Acc: 91.26%
+Val Loss: 0.0768 | Val Acc: 88.68%
+Best Val Acc: 94.34%
+
+Epoch 12/100
+Train Loss: 0.0950 | Train Acc: 92.35%
+Val Loss: 0.0826 | Val Acc: 90.57%
+Best Val Acc: 94.34%
+
+
+切换到 finetune 阶段
+新冻结层数: 4/9
+可训练参数比例: 98.8%
+
+切换到 finetune 阶段，重置优化器
+Epoch 13/100
+Train Loss: 0.0867 | Train Acc: 91.26%
+Val Loss: 0.0680 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 14/100
+Train Loss: 0.0784 | Train Acc: 89.62%
+Val Loss: 0.1003 | Val Acc: 86.79%
+Best Val Acc: 94.34%
+
+Epoch 15/100
+Train Loss: 0.0498 | Train Acc: 92.08%
+Val Loss: 0.0568 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+Epoch 16/100
+Train Loss: 0.0771 | Train Acc: 91.53%
+Val Loss: 0.0695 | Val Acc: 88.68%
+Best Val Acc: 94.34%
+
+Epoch 17/100
+Train Loss: 0.0933 | Train Acc: 90.44%
+Val Loss: 0.0794 | Val Acc: 88.68%
+Best Val Acc: 94.34%
+
+Epoch 18/100
+Train Loss: 0.0704 | Train Acc: 90.16%
+Val Loss: 0.0724 | Val Acc: 90.57%
+Best Val Acc: 94.34%
+
+Epoch 19/100
+Train Loss: 0.0575 | Train Acc: 93.44%
+Val Loss: 0.0655 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 20/100
+Train Loss: 0.0609 | Train Acc: 92.08%
+Val Loss: 0.0660 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+
+性能分析:
+混淆矩阵:
+[[41  6]
+ [ 1  5]]
+少数类召回率: 83.33%
+Epoch 21/100
+Train Loss: 0.0942 | Train Acc: 88.52%
+Val Loss: 0.0463 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+Epoch 22/100
+Train Loss: 0.0534 | Train Acc: 93.44%
+Val Loss: 0.0865 | Val Acc: 86.79%
+Best Val Acc: 94.34%
+
+Epoch 23/100
+Train Loss: 0.0778 | Train Acc: 89.62%
+Val Loss: 0.0963 | Val Acc: 90.57%
+Best Val Acc: 94.34%
+
+Epoch 24/100
+Train Loss: 0.0677 | Train Acc: 92.62%
+Val Loss: 0.0604 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 25/100
+Train Loss: 0.0546 | Train Acc: 93.17%
+Val Loss: 0.0815 | Val Acc: 88.68%
+Best Val Acc: 94.34%
+
+Epoch 26/100
+Train Loss: 0.0656 | Train Acc: 92.90%
+Val Loss: 0.0542 | Val Acc: 88.68%
+Best Val Acc: 94.34%
+
+Epoch 27/100
+Train Loss: 0.0612 | Train Acc: 92.62%
+Val Loss: 0.0554 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 28/100
+Train Loss: 0.0787 | Train Acc: 91.26%
+Val Loss: 0.0709 | Val Acc: 88.68%
+Best Val Acc: 94.34%
+
+Epoch 29/100
+Train Loss: 0.0741 | Train Acc: 91.26%
+Val Loss: 0.0707 | Val Acc: 86.79%
+Best Val Acc: 94.34%
+
+Epoch 30/100
+Train Loss: 0.0849 | Train Acc: 91.53%
+Val Loss: 0.0802 | Val Acc: 88.68%
+Best Val Acc: 94.34%
+
+
+性能分析:
+混淆矩阵:
+[[42  5]
+ [ 1  5]]
+少数类召回率: 83.33%
+Epoch 31/100
+Train Loss: 0.0886 | Train Acc: 92.08%
+Val Loss: 0.0542 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+Epoch 32/100
+Train Loss: 0.0747 | Train Acc: 92.62%
+Val Loss: 0.0598 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 33/100
+Train Loss: 0.0708 | Train Acc: 93.72%
+Val Loss: 0.0500 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+Epoch 34/100
+Train Loss: 0.0690 | Train Acc: 92.90%
+Val Loss: 0.0876 | Val Acc: 86.79%
+Best Val Acc: 94.34%
+
+Epoch 35/100
+Train Loss: 0.0742 | Train Acc: 91.26%
+Val Loss: 0.0511 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 36/100
+Train Loss: 0.0959 | Train Acc: 89.89%
+Val Loss: 0.0490 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 37/100
+Train Loss: 0.0682 | Train Acc: 92.90%
+Val Loss: 0.0574 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+Epoch 38/100
+Train Loss: 0.0672 | Train Acc: 93.17%
+Val Loss: 0.0711 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 39/100
+Train Loss: 0.0661 | Train Acc: 93.72%
+Val Loss: 0.0528 | Val Acc: 90.57%
+Best Val Acc: 94.34%
+
+Epoch 40/100
+Train Loss: 0.0795 | Train Acc: 90.98%
+Val Loss: 0.0611 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+
+性能分析:
+混淆矩阵:
+[[44  3]
+ [ 0  6]]
+少数类召回率: 100.00%
+Epoch 41/100
+Train Loss: 0.0835 | Train Acc: 90.71%
+Val Loss: 0.0619 | Val Acc: 90.57%
+Best Val Acc: 94.34%
+
+Epoch 42/100
+Train Loss: 0.0517 | Train Acc: 92.35%
+Val Loss: 0.0682 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 43/100
+Train Loss: 0.0729 | Train Acc: 92.90%
+Val Loss: 0.0683 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 44/100
+Train Loss: 0.0646 | Train Acc: 91.80%
+Val Loss: 0.0448 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 45/100
+Train Loss: 0.0871 | Train Acc: 91.26%
+Val Loss: 0.0682 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 46/100
+Train Loss: 0.1047 | Train Acc: 88.52%
+Val Loss: 0.0514 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+Epoch 47/100
+Train Loss: 0.0815 | Train Acc: 92.08%
+Val Loss: 0.0564 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 48/100
+Train Loss: 0.0553 | Train Acc: 93.17%
+Val Loss: 0.0643 | Val Acc: 90.57%
+Best Val Acc: 94.34%
+
+Epoch 49/100
+Train Loss: 0.1125 | Train Acc: 87.43%
+Val Loss: 0.0476 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+Epoch 50/100
+Train Loss: 0.0909 | Train Acc: 90.44%
+Val Loss: 0.0441 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+
+性能分析:
+混淆矩阵:
+[[45  2]
+ [ 1  5]]
+少数类召回率: 83.33%
+Epoch 51/100
+Train Loss: 0.1034 | Train Acc: 90.16%
+Val Loss: 0.0551 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+Epoch 52/100
+Train Loss: 0.0693 | Train Acc: 93.99%
+Val Loss: 0.0321 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+Epoch 53/100
+Train Loss: 0.0540 | Train Acc: 94.26%
+Val Loss: 0.0637 | Val Acc: 90.57%
+Best Val Acc: 94.34%
+
+Epoch 54/100
+Train Loss: 0.0713 | Train Acc: 93.17%
+Val Loss: 0.0650 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 55/100
+Train Loss: 0.0434 | Train Acc: 93.99%
+Val Loss: 0.0696 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+Epoch 56/100
+Train Loss: 0.0557 | Train Acc: 92.08%
+Val Loss: 0.0464 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 57/100
+Train Loss: 0.0701 | Train Acc: 91.80%
+Val Loss: 0.0573 | Val Acc: 90.57%
+Best Val Acc: 94.34%
+
+Epoch 58/100
+Train Loss: 0.0643 | Train Acc: 92.62%
+Val Loss: 0.0506 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 59/100
+Train Loss: 0.0704 | Train Acc: 93.72%
+Val Loss: 0.0591 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 60/100
+Train Loss: 0.0780 | Train Acc: 93.44%
+Val Loss: 0.0560 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+
+性能分析:
+混淆矩阵:
+[[45  2]
+ [ 1  5]]
+少数类召回率: 83.33%
+Epoch 61/100
+Train Loss: 0.0559 | Train Acc: 93.99%
+Val Loss: 0.0535 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 62/100
+Train Loss: 0.0682 | Train Acc: 89.89%
+Val Loss: 0.0510 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 63/100
+Train Loss: 0.0702 | Train Acc: 93.17%
+Val Loss: 0.0602 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+Epoch 64/100
+Train Loss: 0.0527 | Train Acc: 93.44%
+Val Loss: 0.0343 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+Epoch 65/100
+Train Loss: 0.0762 | Train Acc: 91.26%
+Val Loss: 0.0375 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+Epoch 66/100
+Train Loss: 0.0655 | Train Acc: 93.72%
+Val Loss: 0.0501 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+Epoch 67/100
+Train Loss: 0.0548 | Train Acc: 92.08%
+Val Loss: 0.0499 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+Epoch 68/100
+Train Loss: 0.0663 | Train Acc: 93.17%
+Val Loss: 0.0487 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+Epoch 69/100
+Train Loss: 0.0461 | Train Acc: 93.44%
+Val Loss: 0.0554 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 70/100
+Train Loss: 0.0771 | Train Acc: 92.08%
+Val Loss: 0.0668 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+
+性能分析:
+混淆矩阵:
+[[41  6]
+ [ 1  5]]
+少数类召回率: 83.33%
+Epoch 71/100
+Train Loss: 0.0631 | Train Acc: 90.98%
+Val Loss: 0.0538 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+Epoch 72/100
+Train Loss: 0.0663 | Train Acc: 93.44%
+Val Loss: 0.0504 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+Epoch 73/100
+Train Loss: 0.0509 | Train Acc: 94.26%
+Val Loss: 0.0571 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 74/100
+Train Loss: 0.0734 | Train Acc: 92.35%
+Val Loss: 0.0984 | Val Acc: 90.57%
+Best Val Acc: 94.34%
+
+Epoch 75/100
+Train Loss: 0.0800 | Train Acc: 91.80%
+Val Loss: 0.0553 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 76/100
+Train Loss: 0.0870 | Train Acc: 90.44%
+Val Loss: 0.0500 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+Epoch 77/100
+Train Loss: 0.0781 | Train Acc: 91.53%
+Val Loss: 0.0398 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 78/100
+Train Loss: 0.0754 | Train Acc: 92.62%
+Val Loss: 0.0598 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+Epoch 79/100
+Train Loss: 0.0746 | Train Acc: 91.53%
+Val Loss: 0.0543 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 80/100
+Train Loss: 0.0639 | Train Acc: 93.72%
+Val Loss: 0.0496 | Val Acc: 90.57%
+Best Val Acc: 94.34%
+
+
+性能分析:
+混淆矩阵:
+[[44  3]
+ [ 1  5]]
+少数类召回率: 83.33%
+Epoch 81/100
+Train Loss: 0.0758 | Train Acc: 92.35%
+Val Loss: 0.0480 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+Epoch 82/100
+Train Loss: 0.0706 | Train Acc: 91.53%
+Val Loss: 0.0426 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+Epoch 83/100
+Train Loss: 0.0653 | Train Acc: 92.35%
+Val Loss: 0.0446 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 84/100
+Train Loss: 0.0391 | Train Acc: 95.63%
+Val Loss: 0.0554 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 85/100
+Train Loss: 0.0495 | Train Acc: 92.35%
+Val Loss: 0.0434 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 86/100
+Train Loss: 0.0715 | Train Acc: 92.35%
+Val Loss: 0.0429 | Val Acc: 94.34%
+Best Val Acc: 94.34%
+
+Epoch 87/100
+Train Loss: 0.0485 | Train Acc: 91.53%
+Val Loss: 0.0632 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 88/100
+Train Loss: 0.0425 | Train Acc: 94.54%
+Val Loss: 0.0608 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 89/100
+Train Loss: 0.0664 | Train Acc: 92.35%
+Val Loss: 0.0302 | Val Acc: 92.45%
+Best Val Acc: 94.34%
+
+Epoch 90/100
+Train Loss: 0.0683 | Train Acc: 93.99%
+Val Loss: 0.0376 | Val Acc: 96.23%
+Best Val Acc: 96.23%
+
+
+性能分析:
+混淆矩阵:
+[[44  3]
+ [ 1  5]]
+少数类召回率: 83.33%
+Epoch 91/100
+Train Loss: 0.0548 | Train Acc: 93.44%
+Val Loss: 0.0468 | Val Acc: 94.34%
+Best Val Acc: 96.23%
+
+Epoch 92/100
+Train Loss: 0.0573 | Train Acc: 93.17%
+Val Loss: 0.0559 | Val Acc: 92.45%
+Best Val Acc: 96.23%
+
+Epoch 93/100
+Train Loss: 0.0626 | Train Acc: 93.44%
+Val Loss: 0.0600 | Val Acc: 94.34%
+Best Val Acc: 96.23%
+
+Epoch 94/100
+Train Loss: 0.0601 | Train Acc: 92.08%
+Val Loss: 0.0413 | Val Acc: 90.57%
+Best Val Acc: 96.23%
+
+Epoch 95/100
+Train Loss: 0.0691 | Train Acc: 92.35%
+Val Loss: 0.0408 | Val Acc: 92.45%
+Best Val Acc: 96.23%
+
+Epoch 96/100
+Train Loss: 0.0705 | Train Acc: 92.35%
+Val Loss: 0.0498 | Val Acc: 92.45%
+Best Val Acc: 96.23%
+
+Epoch 97/100
+Train Loss: 0.0560 | Train Acc: 92.62%
+Val Loss: 0.0553 | Val Acc: 92.45%
+Best Val Acc: 96.23%
+
+Epoch 98/100
+Train Loss: 0.0550 | Train Acc: 94.54%
+Val Loss: 0.0450 | Val Acc: 92.45%
+Best Val Acc: 96.23%
+
+Epoch 99/100
+Train Loss: 0.0509 | Train Acc: 93.17%
+Val Loss: 0.0455 | Val Acc: 94.34%
+Best Val Acc: 96.23%
+
+Epoch 100/100
+Train Loss: 0.0837 | Train Acc: 90.71%
+Val Loss: 0.0503 | Val Acc: 92.45%
+Best Val Acc: 96.23%
+
+
+性能分析:
+混淆矩阵:
+[[44  3]
+ [ 1  5]]
+少数类召回率: 83.33%
+
+进程已结束，退出代码为 0
